@@ -1,0 +1,31 @@
+ALGORITHM COUNTCHARSWORDSVOWELS
+VAR
+    c, prev_c: CHAR
+    vowels, words, i: INTEGER
+BEGIN
+    words:=1
+    vowels:=0
+    prev_c:=""
+    i:=1
+    write("Enter a character")
+    read(c)
+    WHILE (c <> ".") DO
+        i:=i+1
+         IF ((c=" ")&&(prev_c<>" ")) THEN
+            words:=words + 1 
+            prev_c:=c
+         ELSE
+            write("Permission denied to enter two consecutive spaces")
+        END_IF
+    
+        IF (c in {'a','e','i','o','u','y'}) THEN
+            vowels:= vowels + 1
+        END_IF
+
+    END_WHILE
+
+    write("the number of charcters", i)
+    write("the number of vowels", vowels)
+    write("the number of words", words)
+
+END
